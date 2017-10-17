@@ -1,0 +1,16 @@
+[
+{
+  "modid": "dirtsword",
+  "name": "Dirt Sword Mod",
+  "description": "A mod that adds a dirt sword that instantly kills mobs but creates two of the same mob in its place",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Ian Kraybill"],
+  "credits": "Leo Dunleavy for the idea",
+  "logoFile": "assets/dirtsword/textures/items/dirtSword.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
