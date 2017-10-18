@@ -7,7 +7,7 @@ public class Reference
 {
     public static final String MOD_ID = "dirtsword";
     public static final String MOD_NAME = "Dirt Sword Mod";
-    public static final String VERSION = "1.2.1";
+    public static final String VERSION = "1.2.2";
     public static final String ACCEPTED_MC_VERSIONS = "[1.10.2]";
     public static final Item.ToolMaterial DIRT = EnumHelper.addToolMaterial("DIRT",3, 0,1.0F,9999.0F, 30);
 
