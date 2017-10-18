@@ -9,6 +9,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -38,12 +39,15 @@ public class ItemDirtSword extends ItemSwordMT{
         World world = target.worldObj;
         target.setHealth(0);
         if(!world.isRemote){
-            LogHelper.info(target.getClass());
+            //LogHelper.info(target.getClass());
             EntityLivingBase targetCopy[] = new EntityLivingBase[2];
             for (int i = 0; i < 2; i++) {
                 targetCopy[i] = copyEntity(target, world);
                 world.spawnEntityInWorld(targetCopy[i]);
             }
+        }
+        if (!(attacker instanceof EntityPlayer && ((EntityPlayer) attacker).capabilities.isCreativeMode)) {
+            stack.damageItem(2, attacker);
         }
         return super.hitEntity(stack, target, attacker);
     }
