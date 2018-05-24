@@ -9,22 +9,20 @@ public class GuiFactory implements IModGuiFactory
 {
 
     @Override
-    public void initialize(Minecraft minecraftInstance) {
+    public void initialize(Minecraft minecraftInstance) {}
 
+    @Override
+    public boolean hasConfigGui() {
+        return true;
     }
 
     @Override
-    public Class<? extends GuiScreen> mainConfigGuiClass() {
-        return ModGuiConfig.class;
+    public GuiScreen createConfigGui(GuiScreen parentScreen) {
+        return new ModGuiConfig(parentScreen);
     }
 
     @Override
     public Set<RuntimeOptionCategoryElement> runtimeGuiCategories() {
-        return null;
-    }
-
-    @Override
-    public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element) {
         return null;
     }
 }

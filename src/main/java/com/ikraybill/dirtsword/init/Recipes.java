@@ -9,8 +9,8 @@ public class Recipes
     public static void init()
     {
         // dirt sword recipe
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.dirtSword),
-                "d", "d", "s",
-                'd', "dirt", 's', "stickWood"));
+//        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.dirtSword),
+//                "d", "d", "s",
+//                'd', "dirt", 's', "stickWood"));
     }
 }
