@@ -8,7 +8,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModItems {
-    public static ItemSwordMT dirtSword;
+    public static ItemDirtSword dirtSword;
 
     public static void init()
     {

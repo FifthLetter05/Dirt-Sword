@@ -1,24 +1,37 @@
 package com.ikraybill.dirtsword.item;
 
+import com.ikraybill.dirtsword.creativetab.CreativeTabMT;
 import com.ikraybill.dirtsword.reference.Reference;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemDirtSword extends ItemSwordMT{
+public class ItemDirtSword extends ItemSword {
 
 
     public ItemDirtSword(){
         super(Reference.DIRT);
-        String unlocalizedName = "dirtSword";
+        setCreativeTab(CreativeTabMT.MT_TAB);
+        String unlocalizedName = "dirt_sword";
         setRegistryName(unlocalizedName);
         setUnlocalizedName(unlocalizedName);
         setMaxStackSize(1);
         GameRegistry.register(this);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void initModel(){
+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+
     }
 
     @Override
