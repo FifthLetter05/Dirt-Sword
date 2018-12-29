@@ -21,6 +21,6 @@ public class ModItems {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event){
-        event.getRegistry().register(new ItemDirtSword());
+        event.getRegistry().register(dirtSword);
     }
 }

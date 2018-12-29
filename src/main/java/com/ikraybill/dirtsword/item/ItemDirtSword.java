@@ -19,16 +19,17 @@ public class ItemDirtSword extends ItemSword {
 
     public ItemDirtSword(){
         super(Reference.DIRT);
-        setCreativeTab(CreativeTabMT.MT_TAB);
+
         String unlocalizedName = "dirt_sword";
         setRegistryName(unlocalizedName);
         setUnlocalizedName(unlocalizedName);
+        setCreativeTab(CreativeTabMT.MT_TAB);
         setMaxStackSize(1);
     }
 
     @SideOnly(Side.CLIENT)
     public void initModel(){
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(this.getRegistryName(), "inventory"));
 
     }
 
@@ -37,7 +38,7 @@ public class ItemDirtSword extends ItemSword {
         World world = target.world;
         if(!world.isRemote){
             //LogHelper.info();
-            EntityLivingBase targetCopy[] = new EntityLivingBase[2];
+            EntityLivingBase[] targetCopy = new EntityLivingBase[2];
             for (int i = 0; i < 2; i++) {
                 targetCopy[i] = copyEntity(target, world);
                 world.spawnEntity(targetCopy[i]);
@@ -56,7 +57,7 @@ public class ItemDirtSword extends ItemSword {
         EntityLivingBase entityCopy = (EntityLivingBase) entityCopyBase;
         assert entityCopy != null;
         entityCopy.readEntityFromNBT(entity.serializeNBT());
-        entityCopy.setPosition(entity.posX, entity.posY,entity.posZ);
+        entityCopy.setPosition(entity.posX, entity.posY, entity.posZ);
         entityCopy.setHealth(entity.getMaxHealth());
 
         return entityCopy;
